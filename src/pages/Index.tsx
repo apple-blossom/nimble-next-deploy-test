@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Cloud, Code, Zap } from "lucide-react";
+import { ArrowRight, Cloud, Upload, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -13,11 +13,11 @@ const Index = () => {
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Cloud className="h-8 w-8 text-blue-600" />
-            <span className="text-2xl font-bold text-gray-900">SST Test App</span>
+            <span className="text-2xl font-bold text-gray-900">React SST App</span>
           </div>
           <div className="flex items-center space-x-4">
-            <Link to="/dashboard">
-              <Button variant="outline">Dashboard</Button>
+            <Link to="/upload">
+              <Button variant="outline">Upload Images</Button>
             </Link>
             <Button>Get Started</Button>
           </div>
@@ -32,17 +32,17 @@ const Index = () => {
             Ready for SST Deployment
           </Badge>
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            React App for
-            <span className="text-blue-600"> SST Testing</span>
+            React Image Upload
+            <span className="text-blue-600"> with AWS S3</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            A modern React application built with Vite, TypeScript, and Tailwind CSS. 
-            Perfect for testing serverless deployment with SST.
+            A simple React application for uploading images to AWS S3. 
+            Built for SST deployment testing.
           </p>
           <div className="flex items-center justify-center space-x-4">
-            <Link to="/dashboard">
+            <Link to="/upload">
               <Button size="lg" className="flex items-center">
-                Explore Dashboard
+                Upload Images
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -50,18 +50,18 @@ const Index = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
           <Card className="text-center">
             <CardHeader>
-              <Code className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <CardTitle>Modern Stack</CardTitle>
+              <Upload className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+              <CardTitle>Image Upload</CardTitle>
               <CardDescription>
-                Built with React, TypeScript, Vite, and Tailwind CSS
+                Upload multiple images directly to AWS S3
               </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-gray-600">
-                Uses the latest web technologies for optimal performance and developer experience.
+                Simple form interface for selecting and uploading image files to your S3 bucket.
               </p>
             </CardContent>
           </Card>
@@ -69,29 +69,14 @@ const Index = () => {
           <Card className="text-center">
             <CardHeader>
               <Cloud className="h-12 w-12 text-green-600 mx-auto mb-4" />
-              <CardTitle>SST Ready</CardTitle>
+              <CardTitle>SST Deployment</CardTitle>
               <CardDescription>
                 Configured for easy deployment with SST
               </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-gray-600">
-                Pre-configured structure that works seamlessly with SST deployment patterns.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="text-center">
-            <CardHeader>
-              <Zap className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
-              <CardTitle>Interactive Features</CardTitle>
-              <CardDescription>
-                Multiple pages and components to test
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-600">
-                Includes dashboard, forms, and interactive elements for comprehensive testing.
+                Includes SST configuration for AWS deployment with S3 bucket setup.
               </p>
             </CardContent>
           </Card>
@@ -101,7 +86,7 @@ const Index = () => {
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Tech Stack</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'shadcn/ui', 'Lucide Icons', 'React Router', 'React Query'].map((tech) => (
+            {['React 18', 'TypeScript', 'SST', 'AWS S3', 'Vite', 'Tailwind CSS', 'shadcn/ui', 'Lucide Icons'].map((tech) => (
               <div key={tech} className="text-center p-3 bg-gray-50 rounded-lg">
                 <span className="font-medium text-gray-800">{tech}</span>
               </div>
